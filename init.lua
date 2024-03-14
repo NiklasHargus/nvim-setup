@@ -5,6 +5,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.opt.wrap = false
 
+vim.diagnostic.config({virtual_text = false})
 
 -- [[ Install `lazy.nvim` plugin manager ]]
 require 'lazy-bootstrap'
