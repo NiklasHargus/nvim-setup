@@ -26,3 +26,18 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- vim: ts=2 sts=2 sw=2 et
+--
+
+-- Neotree
+vim.keymap.set('n', '<C-n>', "<cmd>Neotree toggle<cr>", {desc = "Open Filetree"})
+
+-- Change focus
+vim.keymap.set('n', '<C-h>', '<C-w>h')
+vim.keymap.set('n', '<C-j>', '<C-w>j')
+vim.keymap.set('n', '<C-k>', '<C-w>k')
+vim.keymap.set('n', '<C-l>', '<C-w>l')
+
+-- Splits
+vim.keymap.set('n', '<leader>ws', "<cmd>split<cr>", {desc = "Split Panel Horizontal"})
+vim.keymap.set('n', '<leader>wv', "<cmd>vsplit<cr>", {desc = "Split Panel Vertical"})
+vim.keymap.set('n', '<leader>wq', "<cmd>q<cr>", {desc = "Close Panel"})
