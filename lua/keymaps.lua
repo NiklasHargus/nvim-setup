@@ -28,8 +28,9 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- vim: ts=2 sts=2 sw=2 et
 --
 
--- Neotree
-vim.keymap.set('n', '<C-n>', "<cmd>Neotree toggle<cr>", {desc = "Open Filetree"})
+-- Filetree
+-- vim.keymap.set('n', '<C-n>', "<cmd>Neotree toggle<cr>", {desc = "Open Filetree"})
+vim.keymap.set('n', '<C-n>', "<cmd>Explore<cr>")
 
 -- Change focus
 vim.keymap.set('n', '<C-h>', '<C-w>h')
