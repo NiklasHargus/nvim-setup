@@ -6,6 +6,7 @@ vim.g.maplocalleader = ' '
 vim.opt.wrap = false
 
 vim.diagnostic.config({virtual_text = false})
+vim.wo.relativenumber = true
 
 -- [[ Install `lazy.nvim` plugin manager ]]
 require 'lazy-bootstrap'
