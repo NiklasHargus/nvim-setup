@@ -8,6 +8,9 @@ require('telescope').setup {
         ['<C-d>'] = false,
       },
     },
+    file_ignore_patterns = {
+        "%.pdf",
+    },
   },
 }
 
