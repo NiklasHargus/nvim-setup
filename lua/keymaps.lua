@@ -30,7 +30,8 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 -- Filetree
 -- vim.keymap.set('n', '<C-n>', "<cmd>Neotree toggle<cr>", {desc = "Open Filetree"})
-vim.keymap.set('n', '<C-n>', "<cmd>Explore<cr>")
+-- vim.keymap.set('n', '<C-n>', "<cmd>Explore<cr>")
+vim.keymap.set('n', '<leader>n', "<cmd>Oil<cr>", {desc="Open parent directory"})
 
 -- Change focus
 -- vim.keymap.set('n', '<C-h>', '<C-w>h')
@@ -49,6 +50,10 @@ vim.keymap.set('n', '<C-h>', '<cmd> TmuxNavigateLeft<cr>', {desc = "Move left"})
 vim.keymap.set('n', '<C-j>', '<cmd> TmuxNavigateDown<cr>', {desc = "Move left"})
 vim.keymap.set('n', '<C-k>', '<cmd> TmuxNavigateUp<cr>', {desc = "Move left"})
 vim.keymap.set('n', '<C-l>', '<cmd> TmuxNavigateRight<cr>', {desc = "Move left"})
+
+
+--clangd format
+-- vim.keymap.set('n', '<leader>cf','<cmd>py3f<path-to-this-file>/clang-format.py<cr>')
 
 
 

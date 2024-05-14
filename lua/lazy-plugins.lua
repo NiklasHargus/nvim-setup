@@ -162,6 +162,13 @@ require('lazy').setup({
         theme = 'auto',
         component_separators = '|',
         section_separators = '',
+        globalstatus = true,
+      },
+      sections = {
+        lualine_c = {},
+        lualine_x = {},
+        lualine_y = {'filename'},
+        lualine_z = {},
       },
     },
   },

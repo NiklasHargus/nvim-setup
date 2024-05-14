@@ -5,6 +5,10 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.opt.wrap = false
 
+vim.opt.cmdheight = 0
+
+vim.opt.scrolloff = 10
+
 vim.diagnostic.config({virtual_text = false})
 vim.wo.relativenumber = true
 

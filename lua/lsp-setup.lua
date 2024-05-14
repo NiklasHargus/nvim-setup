@@ -78,9 +78,19 @@ require('mason-lspconfig').setup()
 --  define the property 'filetypes' to the map in question.
 local servers = {
   clangd = {},
-  -- gopls = {},
+  gopls = {},
   pyright = {},
-  -- rust_analyzer = {},
+  matlab_ls = {
+    filetypes = {"matlab"},
+    settings = {
+      matlab = {
+        installPath = "/opt/matlab/R2023a/"
+      },
+    },
+    single_file_support = true,
+  },
+
+  rust_analyzer = {},
   -- tsserver = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
 
@@ -107,6 +117,8 @@ local mason_lspconfig = require 'mason-lspconfig'
 mason_lspconfig.setup {
   ensure_installed = vim.tbl_keys(servers),
 }
+
+local mason_registry = require('mason-registry')
 
 mason_lspconfig.setup_handlers {
   function(server_name)
