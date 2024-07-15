@@ -40,9 +40,9 @@ vim.keymap.set('n', '<leader>n', "<cmd>Oil<cr>", {desc="Open parent directory"})
 -- vim.keymap.set('n', '<C-l>', '<C-w>l')
 
 -- Splits
-vim.keymap.set('n', '<leader>ws', "<cmd>split<cr>", {desc = "Split Panel Horizontal"})
-vim.keymap.set('n', '<leader>wv', "<cmd>vsplit<cr>", {desc = "Split Panel Vertical"})
-vim.keymap.set('n', '<leader>wq', "<cmd>q<cr>", {desc = "Close Panel"})
+vim.keymap.set('n', '<leader>ws', "<cmd>split<cr>", {desc = "[W]indow [s]plit"})
+vim.keymap.set('n', '<leader>wv', "<cmd>vsplit<cr>", {desc = "[W]indow [v]ertical split"})
+vim.keymap.set('n', '<leader>wq', "<cmd>q<cr>", {desc = "[W]indow [q]uit"})
 
 
 -- Tmux 
@@ -56,7 +56,8 @@ vim.keymap.set('n', '<C-l>', '<cmd> TmuxNavigateRight<cr>', {desc = "Move left"}
 -- vim.keymap.set('n', '<leader>cf','<cmd>py3f<path-to-this-file>/clang-format.py<cr>')
 
 
-
+-- TODO List
+vim.keymap.set('n', '<leader>st', '<cmd> TodoTelescope<cr>', {desc = "[S]earch [T]ODOs"})
 
 
 
