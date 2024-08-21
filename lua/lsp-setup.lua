@@ -80,6 +80,7 @@ local servers = {
   clangd = {},
   gopls = {},
   pyright = {},
+  ltex = {},
   matlab_ls = {
     filetypes = {"matlab"},
     settings = {

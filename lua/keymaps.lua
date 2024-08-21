@@ -59,6 +59,9 @@ vim.keymap.set('n', '<C-l>', '<cmd> TmuxNavigateRight<cr>', {desc = "Move left"}
 -- TODO List
 vim.keymap.set('n', '<leader>st', '<cmd> TodoTelescope<cr>', {desc = "[S]earch [T]ODOs"})
 
+-- Debug
+vim.keymap.set('n', '<leader>db', '<cmd> DapToggleBreakpoint <CR>', {desc = "[D]ebug [B]reakpoint"})
+vim.keymap.set('n', '<leader>dr', '<cmd> DapContinue <CR>', {desc = "[d]ebug [r]un"})
 
 
 
