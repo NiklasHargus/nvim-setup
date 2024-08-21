@@ -31,6 +31,7 @@ return {
       lint.linters_by_ft = {
         markdown = { 'markdownlint' },
         cpp = { 'cppcheck' },
+        c = {'cppcheck'}
       }
       -- local cppcheck = require('lint').linters['cppcheck']
       -- cppcheck.args = {
