@@ -6,7 +6,8 @@ return {
     config = function()
       local lint = require 'lint'
       lint.linters.cppcheck.args = {
-        "--enable=all",
+        -- "--enable=all",
+        "--enable=warning,style,performance,information",
         "--suppress=missingInclude",
         "--suppress=missingIncludeSystem",
         function()
@@ -31,12 +32,7 @@ return {
       lint.linters_by_ft = {
         markdown = { 'markdownlint' },
         cpp = { 'cppcheck' },
-        c = {'cppcheck'}
       }
-      -- local cppcheck = require('lint').linters['cppcheck']
-      -- cppcheck.args = {
-      --   '--enable=all',
-      -- }
 
       -- To allow other plugins to add linters to require('lint').linters_by_ft,
       -- instead set linters_by_ft like this:
