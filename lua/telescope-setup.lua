@@ -10,6 +10,10 @@ require('telescope').setup {
     },
     file_ignore_patterns = {
         "%.pdf",
+        "build/*",
+        "%.dae",
+        "%.stl",
+        "%.obj"
     },
   },
 }
