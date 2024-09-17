@@ -164,16 +164,18 @@ require('lazy').setup({
     -- See `:help lualine.txt`
     opts = {
       options = {
-        icons_enabled = false,
+        icons_enabled = true,
         theme = 'auto',
         component_separators = '|',
         section_separators = '',
         globalstatus = true,
       },
       sections = {
+        lualine_a = {},
+        lualine_b = {},
         lualine_c = {},
-        lualine_x = {},
-        lualine_y = { 'filename' },
+        lualine_x = {'branch', 'filename'},
+        lualine_y = {},
         lualine_z = {},
       },
     },
