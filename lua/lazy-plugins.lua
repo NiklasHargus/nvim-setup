@@ -174,7 +174,7 @@ require('lazy').setup({
         lualine_a = {},
         lualine_b = {},
         lualine_c = {},
-        lualine_x = {'branch', 'filename'},
+        lualine_x = {'diagnostics', 'branch', 'filename'},
         lualine_y = {},
         lualine_z = {},
       },
