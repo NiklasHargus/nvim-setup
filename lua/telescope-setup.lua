@@ -13,7 +13,19 @@ require('telescope').setup {
         "build/*",
         "%.dae",
         "%.stl",
-        "%.obj"
+        "%.obj",
+        "%.aux",
+        "%.dvi",
+        "%.fdb_latexmk",
+        "%.fls",
+        "%.log",
+        "%.blg",
+        "%.bbl",
+        "%.bcf",
+        "%.run.xml",
+        "%.png",
+        "%.svg",
+        "%.out"
     },
   },
 }

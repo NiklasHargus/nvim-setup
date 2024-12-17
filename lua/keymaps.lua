@@ -14,6 +14,7 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnos
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
+
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
@@ -63,6 +64,9 @@ vim.keymap.set('n', '<leader>st', '<cmd> TodoTelescope<cr>', {desc = "[S]earch [
 vim.keymap.set('n', '<leader>db', '<cmd> DapToggleBreakpoint <CR>', {desc = "[D]ebug [B]reakpoint"})
 vim.keymap.set('n', '<leader>dr', '<cmd> DapContinue <CR>', {desc = "[d]ebug [r]un"})
 
+-- Fold
+vim.keymap.set('n', '<leader>fc', '<leader>zc', {desc = "[f]old [c]lose"})
+vim.keymap.set('n', '<leader>fo', '<leader>zo', {desc = "[f]old [o]pen"})
 
 
 

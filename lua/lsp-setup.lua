@@ -45,26 +45,28 @@ local on_attach = function(_, bufnr)
   end, { desc = 'Format current buffer with LSP' })
 end
 
--- document existing key chains 
+-- document existing key chains
 
 require('which-key').add(
   {
-    { "<leader>c", group = "[C]ode" },
+    { "<leader>c",  group = "[C]ode" },
     { "<leader>c_", hidden = true },
-    { "<leader>d", group = "[D]ocument" },
+    { "<leader>d",  group = "[D]ebug" },
     { "<leader>d_", hidden = true },
-    { "<leader>g", group = "[G]it" },
+    { "<leader>g",  group = "[G]it" },
     { "<leader>g_", hidden = true },
-    { "<leader>h", group = "Git [H]unk" },
+    { "<leader>h",  group = "Git [H]unk" },
     { "<leader>h_", hidden = true },
-    { "<leader>r", group = "[R]ename" },
+    { "<leader>r",  group = "[R]ename" },
     { "<leader>r_", hidden = true },
-    { "<leader>s", group = "[S]earch" },
+    { "<leader>s",  group = "[S]earch" },
     { "<leader>s_", hidden = true },
-    { "<leader>t", group = "[T]oggle" },
+    { "<leader>t",  group = "[T]oggle" },
     { "<leader>t_", hidden = true },
-    { "<leader>w", group = "[W]orkspace" },
+    { "<leader>w",  group = "[W]indow" },
     { "<leader>w_", hidden = true },
+    { "<leader>f",  group = "[F]old" },
+    { "<leader>f_", hidden = true },
   }
 )
 
@@ -74,8 +76,8 @@ require('which-key').add(
 -- required for visual <leader>hs (hunk stage) to work
 require('which-key').add(
   {
-    { "<leader>", group = "VISUAL <leader>", mode = "v" },
-    { "<leader>h", desc = "Git [H]unk", mode = "v" },
+    { "<leader>",  group = "VISUAL <leader>", mode = "v" },
+    { "<leader>h", desc = "Git [H]unk",       mode = "v" },
   }
 )
 -- mason-lspconfig requires that these setup functions are called in this order
@@ -93,9 +95,11 @@ require('mason-lspconfig').setup()
 --  define the property 'filetypes' to the map in question.
 local servers = {
   clangd = {
-    cmd = {
-      "clangd",
-      "--fallback-style=Google"
+    cmd = {{
+      'clangd',
+      '--clang-tidy',
+      '--header-insertion=never',
+      }
     }
   },
   gopls = {},
@@ -103,7 +107,7 @@ local servers = {
   pyright = {},
   ltex = {},
   matlab_ls = {
-    filetypes = {"matlab"},
+    filetypes = { "matlab" },
     settings = {
       matlab = {
         installPath = "/opt/matlab/R2023a/"
@@ -152,5 +156,14 @@ mason_lspconfig.setup_handlers {
     }
   end,
 }
+
+-- Set border style
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+  border = "rounded",
+})
+
+vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+  border = "rounded",
+})
 
 -- vim: ts=2 sts=2 sw=2 et
