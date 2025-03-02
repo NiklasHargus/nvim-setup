@@ -95,17 +95,26 @@ require('mason-lspconfig').setup()
 --  define the property 'filetypes' to the map in question.
 local servers = {
   clangd = {
-    cmd = {{
-      'clangd',
-      '--clang-tidy',
-      '--header-insertion=never',
-      }
-    }
+    cmd = {
+      "clangd",
+      "--completion-style=detailed",
+      "--header-insertion=never",
+    },
+    settings = {
+      single_file_support = true,
+    },
   },
   gopls = {},
   ruff = {},
   pyright = {},
   ltex = {},
+  tinymist = {
+    settings = {
+      formatterMode = "typstyle",
+      exportPdf = "onType",
+      semanticTokens = "disable"
+    }
+  },
   matlab_ls = {
     filetypes = { "matlab" },
     settings = {
@@ -117,8 +126,22 @@ local servers = {
   },
 
   rust_analyzer = {},
+  zls = {},
+  julials = {},
   -- tsserver = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
+
+  -- texlab = {
+  --   settings = {
+  --     texlab = {
+  --       formatterLineLength = 80, -- Optional: Line length for formatting
+  --       indentation = {
+  --         tabWidth = 1,
+  --         useSpaces = true
+  --       },
+  --     }
+  --   }
+  -- },
 
   lua_ls = {
     Lua = {
@@ -152,6 +175,7 @@ mason_lspconfig.setup_handlers {
       capabilities = capabilities,
       on_attach = on_attach,
       settings = servers[server_name],
+      cmd = (servers[server_name] or {}).cmd,
       filetypes = (servers[server_name] or {}).filetypes,
     }
   end,
